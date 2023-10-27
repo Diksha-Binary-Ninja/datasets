@@ -1,0 +1,5 @@
+# Load the entire "train" split
+dataset_1 = load_dataset("togethercomputer/RedPajama-Data-1T-Sample", cache_dir=training_args.cache_dir)
+
+# Subsample 1% of the "train" split
+dataset_2 = dataset_1.select([i for i in range(len(dataset_1)) if i % 100 == 0])
